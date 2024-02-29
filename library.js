@@ -25,18 +25,24 @@ function library_to_grid(){
 
         const book_author = document.createElement("span")
         book_author.className = "book-author"
-        book_author.innerHTML = myLibrary[i].author;
+        book_author.innerHTML = `Author: ${myLibrary[i].author}`;
 
         const book_pages = document.createElement("span")
         book_pages.className = "book-pages"
-        book_pages.innerHTML = myLibrary[i].pages;
+        book_pages.innerHTML = `${myLibrary[i].pages} pages`;
 
         const book_read = document.createElement("span")
         book_read.className = "book-read"
         book_read.innerHTML = myLibrary[i].read;
 
-        
+        //Assemble Book
+        book.appendChild(book_title);
+        book.appendChild(book_author);
+        book.appendChild(book_pages);
+        book.appendChild(book_read);
+
         // TODO: Add Book to grid
+        grid.appendChild(book);
     }
     
 }
