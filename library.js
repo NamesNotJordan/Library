@@ -11,6 +11,10 @@ function addBookToLibrary(book) {
     myLibrary.push(book)
 }
 
+function removeFromLibrary(title) {
+    // TODO: Find book in myLibary 
+}
+
 function library_to_grid(){
     //TODO: Create grid based on size of 
     const grid = document.getElementById("library-grid")
@@ -35,12 +39,15 @@ function library_to_grid(){
         book_read.className = "book-read"
         book_read.innerHTML = myLibrary[i].read;
 
+        const remove_book_btn = document.createElement("button")
+        remove_book_btn.innerHTML = "remove book"
+
         //Assemble Book
         book.appendChild(book_title);
         book.appendChild(book_author);
         book.appendChild(book_pages);
         book.appendChild(book_read);
-
+        book.appendChild(remove_book_btn)
         // TODO: Add Book to grid
         grid.appendChild(book);
     }
