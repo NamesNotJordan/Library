@@ -1,19 +1,25 @@
-function Book(title, author, pages, read){
-    this.title= title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book{
+    constructor(title, author, pages, read){
+        this.title= title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
-const myLibrary = [];
-
-function addBookToLibrary(book) {
-    myLibrary.push(book)
+class Library {
+    constructor(){
+        this.books = []
+    }
+    
+    addBookToLibrary(book) {
+        this.books.push(book)
+    }
+    removeFromLibrary(title) {
+        this.books = this.books.filter((book) => book.title !== title)
+    }
 }
 
-function removeFromLibrary(title) {
-    // TODO: Find book in myLibary 
-}
 
 function library_to_grid(){
     //TODO: Create grid based on size of 
@@ -40,7 +46,12 @@ function library_to_grid(){
         book_read.innerHTML = myLibrary[i].read;
 
         const remove_book_btn = document.createElement("button")
+        remove_book_btn.className = "remove-book-btn"
         remove_book_btn.innerHTML = "remove book"
+
+        const read_status_btn = document.createElement("button")
+        read_status_btn.className = "read_btn"
+        read_status_btn.innerHTML = "toggle read status"
 
         //Assemble Book
         book.appendChild(book_title);
@@ -53,3 +64,5 @@ function library_to_grid(){
     }
     
 }
+
+library_to_grid()
