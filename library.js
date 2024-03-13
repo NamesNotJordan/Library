@@ -7,6 +7,11 @@ function Book(title, author, num_pages, has_read) {
     this.read = has_read
 }
 
+function addNewBook(title, author, num_pages, has_read) {
+    const newBook = Book(title, author, num_pages, has_read)
+    library.push(newBook)
+}
+
 function createBookCard(book){
     const grid = document.getElementById("library-grid")
     
@@ -44,13 +49,16 @@ function createBookCard(book){
     bookCard.appendChild(book_author);
     bookCard.appendChild(book_pages);
     bookCard.appendChild(book_read);
-    bookCard.appendChild(btn_group);
     btn_group.appendChild(remove_book_btn)
     btn_group.appendChild(read_status_btn)
+    bookCard.appendChild(btn_group);
+    
     // TODO: Add Book to grid
     grid.appendChild(bookCard);
 }
 
+const default_book = Book("Dwa","jayden",0,"no")
+library.push(default_book)
 
 for (const book in library.books) {
     createBookCard(book)
