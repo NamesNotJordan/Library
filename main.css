@@ -3,12 +3,7 @@ body {
     padding: 0;
     border-block: none;
 }
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 header {
     width: 100%;
     display: grid;
@@ -23,8 +18,8 @@ button {
 }
 #library {
     display: grid;
-    height: max(30vh, 15rem);
-
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 10px;
     margin: 2vh 3vw ;
 
 }
@@ -33,8 +28,6 @@ button {
     border-radius: 5px;
 
     padding: 0.5rem;
-
-    width: 10rem;
 }
 #library div p {
     font-size: 1rem;
