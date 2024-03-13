@@ -6,6 +6,16 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
+
+Book.prototype.toggleRead = function(){
+    this.read = !this.read
+}
+
+function toggleRead(index) {
+    library[index].toggleRead()
+    renderLibrary()
+}
+
 function addBookToLibrary() {
     // Getting The values from form
     const title = document.querySelector("#title").value
@@ -38,6 +48,7 @@ function removeBook(index) {
     library.splice(index, 1)
     renderLibrary()
 }
+
 
 const addBookButton = document.querySelector("#add-book-btn")
 addBookButton.addEventListener("click", function() {
