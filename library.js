@@ -1,31 +1,13 @@
-class Book{
-    constructor(title, author, pages, read){
-        this.title= title;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
-    }
+const library = []
+
+function Book(title, author, num_pages, has_read) {
+    this.title = title
+    this.author = author
+    this.pages = num_pages
+    this.read = has_read
 }
 
-class Library {
-    constructor(){
-        this.books = []
-    }
-    inLibrary(title) {
-        return this.books.some((book)=> book.title !== title)
-    }
-    addBookToLibrary(newBook) {
-        if (!this.inLibrary(newBook)){
-            this.books.push(book)
-        }        
-    }
-    removeFromLibrary(title) {
-        this.books = this.books.filter((book) => book.title !== title)
-    }
-}
-const library = new Library()
-
-const createBookCard = (book) =>{
+function createBookCard(book){
     const grid = document.getElementById("library-grid")
     
     // TODO: Create Book element
@@ -70,12 +52,6 @@ const createBookCard = (book) =>{
 }
 
 
-// Events:
-
-const addBook = (e) => {
-
-} 
-
-const removeBook = (e) => {
-    
+for (const book in library.books) {
+    createBookCard(book)
 }

@@ -3,7 +3,24 @@ body {
     padding: 0;
     border-block: none;
 }
-
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-color: cadetblue;
+}
 h1 {
     font-size: 5rem;
+}
+#library-grid {
+    height: max(30vh, 15rem);
+}
+button {
+    font-size: 2rem;
 }
