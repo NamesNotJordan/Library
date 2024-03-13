@@ -18,15 +18,18 @@ header {
 h1 {
     font-size: 5rem;
 }
-#library-grid {
+#library {
     height: max(30vh, 15rem);
 }
 button {
     font-size: 2rem;
 }
+#library {
+    display: grid;
+}
+#library div {
+    border: 1px black solid;
+    border-radius: 5px;
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 2rem;
 }
