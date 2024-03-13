@@ -38,6 +38,7 @@ function renderLibrary() {
             <p class = "book-author">by ${book.author}</p>
             <p>${book.pages} pages</p>
             <p class="book-read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+            <button class="toggle-read-btn" onclick ="toggleRead(${i})">Toggle Read Status</button>
             <button class="remove-btn" onclick="removeBook(${i})">Remove </button>
             `
         libraryBooks.appendChild(bookCard)
