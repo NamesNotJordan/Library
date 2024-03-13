@@ -24,11 +24,11 @@ function renderLibrary() {
         const book = library[i];
         const bookCard = document.createElement("div")
         bookCard.innerHTML = `
-            <h3 class="book-title>${book.title}</h3>
+            <h3 class="book-title">${book.title}</h3>
             <p class = "book-author">by ${book.author}</p>
             <p>${book.pages} pages</p>
             <p class="book-read-status">${book.read ? "Read" : "Not Read Yet"}</p>
-            <button> class="remove-btn" onclick="removeBook(${i})
+            <button class="remove-btn" onclick="removeBook(${i})">Remove </button>
             `
         libraryBooks.appendChild(bookCard)
     }    
