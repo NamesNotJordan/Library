@@ -51,21 +51,16 @@ class Book {
     }
 }
 
-
-
-
-
-
-
+const myLibrary = new Library();
 
 
 const addBookButton = document.querySelector("#add-book-btn")
-addBookButton.addEventListener("click", function() {
+addBookButton.addEventListener("click", () => {
     const newBookForm = document.querySelector("#new-book-form")
     newBookForm.style.display = "flex"
 })
 
-document.querySelector("#new-book-form").addEventListener("submit", function(event) {
-    event.preventDefault()
-    addBookToLibrary()
+document.querySelector("#new-book-form").addEventListener("submit", (event)=> {
+    event.preventDefault();
+    myLibrary.addBookToLibrary();
 })
