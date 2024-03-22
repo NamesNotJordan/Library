@@ -1,5 +1,3 @@
-// const library = []
-
 class Library {
     constructor(){
         this.books = [];
@@ -35,6 +33,10 @@ class Library {
         this.books.push(newBook)  
         this.renderLibrary()  
     }
+    removeBook(index) {
+        this.books.splice(index, 1)
+        this.renderLibrary()
+    }
 }
 
 class Book {
@@ -54,10 +56,7 @@ class Book {
 
 
 
-function removeBook(index) {
-    library.splice(index, 1)
-    renderLibrary()
-}
+
 
 
 const addBookButton = document.querySelector("#add-book-btn")
