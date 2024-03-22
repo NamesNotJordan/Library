@@ -1,5 +1,31 @@
-const library = []
+// const library = []
 
+class Library {
+    constructor(){
+        this.books = [];
+    }
+    toggleRead(index) {
+        books[index].toggleRead()
+        renderLibrary()
+    }
+    renderLibrary() {
+        const libraryElement = document.querySelector("#library")
+        libraryElement.innerHTML = ""
+        for (let i = 0; i < this.books.length; i++) {
+            const book = this.books[i];
+            const bookCard = document.createElement("div")
+            bookCard.innerHTML = `
+                <h3 class="book-title">${book.title}</h3>
+                <p class = "book-author">by ${book.author}</p>
+                <p>${book.pages} pages</p>
+                <p class="book-read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+                <button class="toggle-read-btn" onclick ="toggleRead(${i})">Toggle Read Status</button>
+                <button class="remove-btn" onclick="removeBook(${i})">Remove </button>
+                `
+            libraryElement.appendChild(bookCard)
+        }    
+    }
+}
 
 class Book {
     constructor(title, author, pages, read) {
@@ -33,23 +59,7 @@ function addBookToLibrary() {
     renderLibrary()  
 }
 
-function renderLibrary() {
-    const libraryBooks = document.querySelector("#library")
-    libraryBooks.innerHTML = ""
-    for (let i = 0; i < library.length; i++) {
-        const book = library[i];
-        const bookCard = document.createElement("div")
-        bookCard.innerHTML = `
-            <h3 class="book-title">${book.title}</h3>
-            <p class = "book-author">by ${book.author}</p>
-            <p>${book.pages} pages</p>
-            <p class="book-read-status">${book.read ? "Read" : "Not Read Yet"}</p>
-            <button class="toggle-read-btn" onclick ="toggleRead(${i})">Toggle Read Status</button>
-            <button class="remove-btn" onclick="removeBook(${i})">Remove </button>
-            `
-        libraryBooks.appendChild(bookCard)
-    }    
-}
+
 
 function removeBook(index) {
     library.splice(index, 1)
