@@ -6,7 +6,7 @@ class Library {
     }
     toggleRead(index) {
         books[index].toggleRead()
-        renderLibrary()
+        this.renderLibrary()
     }
     renderLibrary() {
         const libraryElement = document.querySelector("#library")
@@ -25,6 +25,16 @@ class Library {
             libraryElement.appendChild(bookCard)
         }    
     }
+    addBookToLibrary() {
+        // Getting The values from form
+        const title = document.querySelector("#title").value
+        const author = document.querySelector("#author").value
+        const pages = document.querySelector("#pages").value
+        const read = document.querySelector("#read").checked
+        const newBook = new Book(title,author,pages,read)
+        this.books.push(newBook)  
+        this.renderLibrary()  
+    }
 }
 
 class Book {
@@ -39,25 +49,8 @@ class Book {
     }
 }
 
-Book.prototype.toggleRead = function(){
-    this.read = !this.read
-}
 
-function toggleRead(index) {
-    library[index].toggleRead()
-    renderLibrary()
-}
 
-function addBookToLibrary() {
-    // Getting The values from form
-    const title = document.querySelector("#title").value
-    const author = document.querySelector("#author").value
-    const pages = document.querySelector("#pages").value
-    const read = document.querySelector("#read").checked
-    const newBook = new Book(title,author,pages,read)
-    library.push(newBook)  
-    renderLibrary()  
-}
 
 
 
