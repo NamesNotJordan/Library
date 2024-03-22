@@ -16,6 +16,7 @@ h1 {
 button {
     font-size: 2rem;
 }
+
 #library {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
