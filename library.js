@@ -54,10 +54,13 @@ function removeBook(index) {
 const addBookButton = document.querySelector("#add-book-btn")
 addBookButton.addEventListener("click", function() {
     const newBookForm = document.querySelector("#new-book-form")
-    newBookForm.style.display = "flex"
+    newBookForm.style.display = "flex";
 })
 
 document.querySelector("#new-book-form").addEventListener("submit", function(event) {
     event.preventDefault()
+    if (!document.getElementById("title").checkValidity()) {
+        alert("Title must be made of Words");
+    }else 
     addBookToLibrary()
 })
